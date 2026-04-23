@@ -8,13 +8,29 @@ const galleryVideos = [
     { id: 4, src: '/assets/gallery-videos/gallery-4.mp4', alt: 'Coffee Reel 4' },
     { id: 5, src: '/assets/gallery-videos/gallery-5.mp4', alt: 'Coffee Reel 5' },
     { id: 6, src: '/assets/gallery-videos/gallery-6.mp4', alt: 'Coffee Reel 6' },
-    { id: 7, src: '/assets/gallery-videos/gallery-7.mp4', alt: 'Coffee Reel 7' },
 ];
 
 function VideoItem({ videoData, onOpenPopup }) {
     const videoRef = useRef(null);
+    const wrapperRef = useRef(null);
     const [isMuted, setIsMuted] = useState(true);
     const [isPlaying, setIsPlaying] = useState(false);
+    const [shouldLoad, setShouldLoad] = useState(false);
+
+    useEffect(() => {
+        if (!wrapperRef.current || shouldLoad) return;
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting) {
+                    setShouldLoad(true);
+                    observer.disconnect();
+                }
+            },
+            { rootMargin: '300px' }
+        );
+        observer.observe(wrapperRef.current);
+        return () => observer.disconnect();
+    }, [shouldLoad]);
 
     const toggleMute = (e) => {
         e.stopPropagation();
@@ -37,6 +53,7 @@ function VideoItem({ videoData, onOpenPopup }) {
 
     return (
         <div
+            ref={wrapperRef}
             className="gallery-item-wrapper"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -44,7 +61,8 @@ function VideoItem({ videoData, onOpenPopup }) {
         >
             <video
                 ref={videoRef}
-                src={videoData.src}
+                src={shouldLoad ? videoData.src : undefined}
+                preload="none"
                 className="gallery-item-video"
                 muted={isMuted}
                 loop

@@ -13,6 +13,22 @@ export default function BrandStory() {
     const modalContentRef = useRef(null);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+
+    useEffect(() => {
+        if (!sectionRef.current || shouldLoadVideo) return;
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting) {
+                    setShouldLoadVideo(true);
+                    observer.disconnect();
+                }
+            },
+            { rootMargin: '800px' }
+        );
+        observer.observe(sectionRef.current);
+        return () => observer.disconnect();
+    }, [shouldLoadVideo]);
 
     // ── Entrance Animation ──────────────────────────────
     useLayoutEffect(() => {
@@ -74,13 +90,14 @@ export default function BrandStory() {
     return (
         <section className="brand-story" ref={sectionRef}>
             {/* Background Video */}
-            <video 
-                className="brand-story-bg-video" 
-                src="/assets/brand-story-video.mp4" 
-                autoPlay 
-                loop 
-                muted 
-                playsInline 
+            <video
+                className="brand-story-bg-video"
+                src={shouldLoadVideo ? "/assets/brand-story-video.mp4" : undefined}
+                preload="none"
+                autoPlay
+                loop
+                muted
+                playsInline
             />
             <div className="brand-story-bg-overlay"></div>
 

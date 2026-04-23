@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import React, { useRef, useLayoutEffect, useState, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './BeanJourney.css';
@@ -37,6 +37,22 @@ export default function BeanJourney() {
     const cardsContainerRef = useRef(null);
     const wrapperRefs = useRef([]);
     const innerRefs = useRef([]);
+    const [shouldLoadVideos, setShouldLoadVideos] = useState(false);
+
+    useEffect(() => {
+        if (!sectionRef.current || shouldLoadVideos) return;
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting) {
+                    setShouldLoadVideos(true);
+                    observer.disconnect();
+                }
+            },
+            { rootMargin: '600px' }
+        );
+        observer.observe(sectionRef.current);
+        return () => observer.disconnect();
+    }, [shouldLoadVideos]);
 
     useLayoutEffect(() => {
         const section = sectionRef.current;
@@ -122,13 +138,14 @@ export default function BeanJourney() {
                             ref={el => innerRefs.current[index] = el}
                         >
                             {/* Full bleed background video */}
-                            <video 
-                                src={step.video} 
-                                className="journey-card-bg" 
-                                autoPlay 
-                                loop 
-                                muted 
-                                playsInline 
+                            <video
+                                src={shouldLoadVideos ? step.video : undefined}
+                                preload="none"
+                                className="journey-card-bg"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
                             />
 
                             {/* Dark overlay to make text pop */}
