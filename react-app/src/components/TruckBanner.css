@@ -1,0 +1,128 @@
+/* ═══════════════════════════════════════════════
+   Truck Banner — Scroll-Triggered Horizontal Drive
+   Cinematic, luxury coffee brand motion
+   ═══════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+/* ── Section — height matches truck image ────── */
+
+.truck-banner {
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+    background-color: #EAE6DC;
+    overflow: hidden;
+    /* Top: tight, Bottom: generous so section fills viewport */
+    padding: 30px 0 0;
+    display: flex;
+    align-items: center;
+}
+
+/* ── Truck + Banner Assembly ─────────────────── */
+
+.truck-banner__assembly {
+    position: relative;
+    display: flex;
+    align-items: center;
+    will-change: transform;
+}
+
+/* ── Truck Image ─────────────────────────────── */
+
+.truck-banner__truck {
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.truck-banner__truck-img {
+    display: block;
+    height: clamp(140px, 18vw, 220px);
+    width: auto;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* ── Banner (trails behind truck) ────────────── */
+
+.truck-banner__banner-wrap {
+    position: relative;
+    will-change: transform;
+    margin-left: -22px;
+    z-index: 1;
+    transform-origin: left center;
+}
+
+.truck-banner__banner-svg {
+    display: block;
+    height: 110px;
+    width: auto;
+    overflow: visible;
+}
+
+/* Banner flag shape */
+.truck-banner__banner-shape {
+    fill: #D4C9B0;
+    opacity: 0.92;
+}
+
+/* Banner text */
+.truck-banner__banner-text {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 8px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    fill: #2E2E2E;
+    text-anchor: middle;
+    dominant-baseline: central;
+}
+
+/* ── Ground Line ─────────────────────────────── */
+
+.truck-banner__ground {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+}
+
+/* ── Responsive ──────────────────────────────── */
+
+@media (max-width: 768px) {
+    .truck-banner {
+        padding: 40px 0;
+    }
+
+    .truck-banner__truck-img {
+        height: clamp(100px, 25vw, 150px);
+    }
+
+    .truck-banner__banner-svg {
+        height: 45px;
+    }
+
+    .truck-banner__banner-text {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .truck-banner {
+        padding: 30px 0;
+    }
+
+    .truck-banner__truck-img {
+        height: 90px;
+    }
+
+    .truck-banner__banner-svg {
+        height: 35px;
+    }
+
+    .truck-banner__banner-text {
+        font-size: 9px;
+        letter-spacing: 0.08em;
+    }
+}

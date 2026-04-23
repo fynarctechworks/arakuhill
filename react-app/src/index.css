@@ -1,0 +1,201 @@
+/* ==========================================================================
+   RESET & BASE
+   ========================================================================== */
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* removed standard scrollbar styling since we are hiding it */
+}
+
+/* Show scrollbar but style it minimally */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+html,
+body {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f7f5f0;
+    color: #f7f5f0;
+    font-family: 'Inter', sans-serif;
+    /* Removed overflow-x: hidden to fix GSAP pinning jitter */
+}
+
+/* Safe scroll boundary */
+#root {
+    overflow-x: clip;
+    width: 100%;
+}
+
+/* ==========================================================================
+   UTILITIES
+   ========================================================================== */
+html.no-scroll,
+body.no-scroll {
+    overflow: hidden !important;
+    height: 100vh !important;
+    touch-action: none;
+}
+
+/* ==========================================================================
+   SECTION 1: CINEMATIC INTRO
+   ========================================================================== */
+.intro-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f7f5f0;
+}
+
+/* 6 Equal Vertical Panels */
+.panels-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 5;
+}
+
+.panel {
+    flex: 1;
+    height: 100vh;
+    background-color: #2A3720;
+    will-change: transform;
+}
+
+/* Logo Wrapper */
+.logo-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none;
+    opacity: 1;
+    will-change: transform, opacity;
+}
+
+.logo-wrapper svg {
+    display: block;
+}
+
+.logo-wrapper svg path {
+    will-change: stroke-dashoffset, fill, stroke;
+}
+
+/* Big Typography */
+.big-text-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.big-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 9.5vw, 12vw);
+    font-weight: 400;
+    color: #D4AF37;
+    letter-spacing: 0.08em;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .big-text {
+        font-size: clamp(3rem, 15vw, 6rem);
+    }
+}
+
+/* ==========================================================================
+   GLOBAL SECTION HEADERS
+   ========================================================================== */
+.section-header {
+    text-align: center;
+    padding: 40px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: var(--text-color, #2E2E2E);
+    margin: 0;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.section-subtitle {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1rem, 1.2vw, 1.25rem);
+    font-weight: 200;
+    color: var(--subtitle-color, #4a4a4a);
+    margin: 0;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+.letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(40px);
+    will-change: opacity, transform;
+}
+
+/* ==========================================================================
+   GLOBAL SECTION LAYER (DECORATIVE OVERLAY)
+   ========================================================================== */
+.section-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0;
+    /* On top of background elements, below content if needed */
+    pointer-events: none;
+    /* Ensure it doesn't block interactions */
+    opacity: 0.8;
+    /* Subtle transparency */
+}

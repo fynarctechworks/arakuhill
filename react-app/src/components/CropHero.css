@@ -1,0 +1,306 @@
+/* CropHero.css - Exact replica of the CropTab layout */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&display=swap');
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.crop-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 800px;
+    overflow: hidden;
+    /* Earthy green gradient to match the reference */
+    background: radial-gradient(ellipse at 50% 60%, #6e7b57 0%, #515d40 40%, #343c27 100%);
+    color: #fcfafa;
+    font-family: 'Manrope', 'Mona Sans', system-ui, sans-serif;
+    z-index: 20;
+    /* Keep it above other content */
+}
+
+/* ================== NAVIGATION ================== */
+.crop-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1em 1.88em;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    z-index: 9999;
+    box-sizing: border-box;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.4s ease, background 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+/* Blurry glass nav on scroll */
+.crop-nav.nav-scrolled {
+    background: transparent;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.crop-nav.nav-dark {
+    color: #2A3720;
+}
+
+.crop-nav-left {
+    justify-self: start;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Hamburger icon */
+.crop-nav-hamburger {
+    color: inherit;
+    transition: opacity 0.3s ease;
+}
+
+.crop-nav-hamburger:hover {
+    opacity: 0.7;
+}
+
+.crop-nav.nav-dark .crop-nav-hamburger {
+    color: #2A3720;
+}
+
+.crop-nav-center {
+    justify-self: center;
+}
+
+.crop-logo {
+    height: 48px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
+    transition: filter 0.3s ease;
+}
+
+.crop-nav.nav-dark .crop-logo {
+    filter: brightness(0) saturate(100%) invert(18%) sepia(23%) saturate(1015%) hue-rotate(44deg) brightness(97%) contrast(89%);
+}
+
+.crop-nav-right {
+    justify-self: end;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+/* Contact button in nav */
+.crop-nav-contact-btn {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fcfafa;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 4px;
+    padding: 0.5em 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.crop-nav-contact-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.crop-nav.nav-dark .crop-nav-contact-btn {
+    color: #2A3720;
+    border-color: rgba(42, 55, 32, 0.35);
+}
+
+.crop-nav.nav-dark .crop-nav-contact-btn:hover {
+    background: rgba(42, 55, 32, 0.08);
+    border-color: rgba(42, 55, 32, 0.6);
+}
+
+
+/* ================== MAIN CONTENT WRAPPER ================== */
+.crop-content-wrapper {
+    position: absolute;
+    top: 20vh;
+    left: 1.88em;
+    width: calc(100% - 3.76em);
+    z-index: 30;
+    box-sizing: border-box;
+}
+
+/* Master Title */
+.crop-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.crop-title {
+    color: #f4ede6;
+    letter-spacing: -.02em;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Aeonik, Arial, sans-serif;
+    font-size: 10em;
+    font-weight: 400;
+    line-height: 110%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.crop-title-word {
+    display: inline-block;
+    margin-right: 1.5vw;
+}
+
+.crop-tm {
+    font-size: 2vw;
+    font-weight: 300;
+    margin-left: 0.2vw;
+    vertical-align: super;
+    line-height: 1;
+    transform: translateY(1.5vw);
+    display: inline-block;
+}
+
+/* The Button */
+.crop-button {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    padding: 0.8rem 1.8rem;
+    color: #fcfafa;
+    font-family: inherit;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    transform: translateY(-0.8vw);
+    /* Align baseline slightly up due to line height */
+}
+
+.crop-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.crop-button-dot {
+    font-size: 0.5rem;
+    opacity: 0.5;
+}
+
+/* Divider Line */
+.crop-line {
+    margin-top: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 1.5rem;
+}
+
+/* Subtext Below Line */
+.crop-sub-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    opacity: 0.9;
+}
+
+.crop-sub-right {
+    text-align: right;
+    line-height: 1.5;
+}
+
+
+/* ================== BOTTOM CONTENT ================== */
+.crop-bottom-container {
+    position: absolute;
+    bottom: 5.5rem;
+    left: 0;
+    width: 100%;
+    padding: 0 1.88em;
+    z-index: 30;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.crop-bottom-blocks {
+    margin-bottom: 2rem;
+}
+
+.crop-bottom-large {
+    font-size: 2.6vw;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0 0 1rem 0;
+    color: #fcfafa;
+}
+
+.crop-bottom-small {
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+    margin: 0;
+    opacity: 0.8;
+}
+
+
+/* ================== CENTER FLOATING OBJECT ================== */
+.crop-center-object {
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 25;
+    width: 35vw;
+    max-width: 500px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.crop-center-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.5));
+}
+
+.crop-center-shadow {
+    margin-top: -2rem;
+    width: 60%;
+    height: 20px;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.4) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(5px);
+}

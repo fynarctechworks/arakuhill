@@ -1,0 +1,212 @@
+/* ═══════════════════════════════════════════════
+   CoffeeGallery — Infinite Auto-Scrolling & Draggable Carousel
+   ═══════════════════════════════════════════════ */
+
+.coffee-gallery-new {
+    width: 100%;
+    background-color: #f4ede6;
+    padding: clamp(60px, 8vh, 100px) 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Outfit', sans-serif;
+    color: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.coffee-gallery-new .section-header {
+    padding: 0 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ── Auto-Scrolling & Draggable Container ── */
+.gallery-auto-container {
+    width: 100%;
+    overflow-x: auto;
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 20px 0;
+    box-sizing: border-box;
+    cursor: grab;
+    z-index: 1;
+}
+
+.gallery-auto-container::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-auto-container.dragging {
+    cursor: grabbing;
+}
+
+.gallery-track {
+    display: flex;
+    width: max-content;
+}
+
+.gallery-set {
+    display: flex;
+    gap: 30px;
+    /* Crucial padding right so the math exactly captures 1 set = width / 3 */
+    padding-right: 30px;
+    height: clamp(400px, 60vh, 700px);
+}
+
+/* ── Individual Video Items ── */
+.gallery-item-wrapper {
+    position: relative;
+    flex: 0 0 auto;
+    width: clamp(250px, 35vh, 450px);
+    height: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #000;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+}
+
+.gallery-item-wrapper:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.gallery-item-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+/* ── Play Overlay ── */
+.video-play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 2;
+}
+
+.video-play-overlay svg {
+    width: 30px;
+    height: 30px;
+    margin-left: 4px;
+    /* Offset to visually center the play triangle */
+}
+
+.gallery-item-wrapper:hover .video-play-overlay {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* ── Mute Toggle ── */
+.video-mute-toggle {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    z-index: 5;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.video-mute-toggle:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+.video-mute-toggle svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ── Fullscreen Popup Modal ── */
+.gallery-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.gallery-popup-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 3rem;
+    color: #ffffff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 300;
+    transition: color 0.2s ease, transform 0.2s ease;
+    z-index: 10001;
+}
+
+.gallery-popup-close:hover {
+    color: #D4AF37;
+    transform: rotate(90deg);
+}
+
+.gallery-popup-video {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.8);
+    cursor: default;
+    animation: scaleIn 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

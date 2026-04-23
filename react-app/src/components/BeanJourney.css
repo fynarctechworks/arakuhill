@@ -1,0 +1,135 @@
+/* ═══════════════════════════════════════════════
+   Bean Journey — Pinned GSAP Stacking Cards
+   Full-image cards with overlay + text on top
+   ═══════════════════════════════════════════════ */
+
+.bean-journey {
+    position: relative;
+    width: 100%;
+    /* We make the section 100vh so it perfectly fills the screen while pinned */
+    height: 100vh;
+    background-color: #f4ede6;
+    padding-top: clamp(60px, 8vh, 100px);
+    /* Clip cards sliding up from bottom so they don't bleed out */
+    overflow: hidden;
+    font-family: 'Outfit', sans-serif;
+    color: #1a1a1a;
+}
+
+/* ── Container for Stacking ── */
+.bean-journey-cards-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    /* Give it a solid height to act as a stage for the cards */
+    height: clamp(400px, 65vh, 700px);
+    margin: 0vh auto 0;
+    z-index: 2;
+}
+
+/* ── Wrapper for each card (absolutely stacked) ── */
+.journey-card-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* padding handles the container bounds internally */
+    padding: 0 5vw;
+    will-change: transform;
+}
+
+/* ── Inner Element that gets scaled down ── */
+.journey-card-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 52px;
+    overflow: hidden;
+    position: relative;
+    will-change: transform, opacity;
+    transform-origin: center center;
+}
+
+/* ── Full-bleed background image ── */
+.journey-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 1;
+}
+
+/* ── Dark overlay to make text pop ── */
+.journey-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.75) 0%,
+            rgba(0, 0, 0, 0.35) 50%,
+            rgba(0, 0, 0, 0.15) 100%);
+    z-index: 2;
+}
+
+/* ── Text content on top of overlay ── */
+.journey-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 50px 60px;
+    z-index: 3;
+    color: #fff;
+}
+
+.journey-card-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #D4AF37;
+    opacity: 0.9;
+    display: block;
+    margin-bottom: 130px;
+    line-height: 1;
+}
+
+.journey-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-align: center;
+    margin-bottom: 16px;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.journey-card-desc {
+    font-size: clamp(0.9rem, 1.3vw, 1.15rem);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.88);
+    font-weight: 300;
+    text-align: center;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .bean-journey-cards-container {
+        height: 60vh;
+        min-height: 350px;
+    }
+
+    .journey-card-content {
+        padding: 30px 25px;
+    }
+
+    .journey-card-number {
+        font-size: 2.8rem;
+    }
+}

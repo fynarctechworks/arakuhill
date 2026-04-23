@@ -1,0 +1,323 @@
+/* ═══════════════════════════════════════════════
+   Travel Timeline — Luxury Editorial Redesign
+   Art direction: European print magazine aesthetic
+   Grid: Swiss-inspired asymmetric composition
+   ═══════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
+
+/* ── Root Section ────────────────────────────── */
+
+.travel-timeline {
+    position: relative;
+    background-color: #EAE6DC;
+    padding: 8px 0 200px;
+    overflow: hidden;
+}
+
+/* ── Heading ─────────────────────────────────── */
+
+.travel-timeline__heading {
+    text-align: center;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: clamp(3.2rem, 6vw, 5.8rem);
+    font-weight: 300;
+    color: #2E2E2E;
+    letter-spacing: -0.015em;
+    margin: 0 auto 120px;
+    line-height: 1.05;
+    opacity: 0;
+    max-width: 800px;
+    padding: 0 40px;
+}
+
+/* ── SVG Path (absolute overlay) ─────────────── */
+
+.travel-timeline__svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: visible;
+}
+
+.travel-timeline__path-bg {
+    fill: none;
+    stroke: rgba(58, 58, 58, 0.15);
+    stroke-width: 1;
+    stroke-dasharray: 6 8;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+}
+
+.travel-timeline__path-fg {
+    fill: none;
+    stroke: rgba(58, 58, 58, 0.45);
+    stroke-width: 1;
+    stroke-dasharray: 6 8;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+}
+
+/* ── Sections Container ──────────────────────── */
+
+.travel-timeline__sections {
+    position: relative;
+    z-index: 2;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+/* ── Individual Section ──────────────────────── */
+
+.travel-section {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    gap: 0 24px;
+    margin-bottom: 200px;
+    min-height: 500px;
+    align-items: center;
+    opacity: 0;
+}
+
+.travel-section:last-child {
+    margin-bottom: 0;
+}
+
+/* ── Image Block ─────────────────────────────── */
+
+.travel-section__image-block {
+    position: relative;
+    overflow: hidden;
+    border-radius: 48px;
+    line-height: 0;
+}
+
+.travel-section__image-block::before {
+    content: '';
+    display: block;
+    padding-bottom: 70%;
+}
+
+.travel-section__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.travel-section__image-block:hover .travel-section__image {
+    transform: scale(1.025);
+}
+
+/* ── Text Content ────────────────────────────── */
+
+.travel-section__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+    background: #eae6dc;
+}
+
+/* Location & Date — Primary position */
+.travel-section__location-group {
+    margin-bottom: 0;
+}
+
+.travel-section__location {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: clamp(1.4rem, 2vw, 1.85rem);
+    font-weight: 400;
+    font-style: italic;
+    color: #2E2E2E;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.travel-section__date {
+    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+    font-size: clamp(0.75rem, 0.9vw, 0.88rem);
+    font-weight: 300;
+    color: #8A857C;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.5;
+}
+
+/* Coordinates — Large faded display */
+.travel-section__coordinates {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 300;
+    color: rgba(46, 46, 46, 0.12);
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    white-space: nowrap;
+    margin-top: 32px;
+}
+
+.travel-section__coord-dash {
+    display: inline-block;
+    margin: 0 10px;
+    opacity: 0.6;
+}
+
+/* ═══════════════════════════════════════════════
+   LAYOUT VARIANTS — Asymmetric Grid Positions
+   ═══════════════════════════════════════════════ */
+
+/* ── Layout A: Image left (col 1-6), Text right (col 8-12) ── */
+
+.travel-section--layout-a .travel-section__image-block {
+    grid-column: 1 / 7;
+    grid-row: 1;
+}
+
+.travel-section--layout-a .travel-section__text {
+    grid-column: 8 / 13;
+    grid-row: 1;
+    text-align: left;
+    align-items: flex-start;
+}
+
+/* ── Layout B: Text left (col 1-5), Image right (col 7-12) ── */
+
+.travel-section--layout-b .travel-section__image-block {
+    grid-column: 7 / 13;
+    grid-row: 1;
+}
+
+.travel-section--layout-b .travel-section__text {
+    grid-column: 1 / 6;
+    grid-row: 1;
+    text-align: left;
+    align-items: flex-start;
+}
+
+/* ── Layout C: Image left offset (col 2-7), Text right (col 9-12) ── */
+
+.travel-section--layout-c .travel-section__image-block {
+    grid-column: 1 / 7;
+    grid-row: 1;
+}
+
+.travel-section--layout-c .travel-section__text {
+    grid-column: 8 / 13;
+    grid-row: 1;
+    text-align: left;
+    align-items: flex-start;
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+    .travel-timeline {
+        padding: 100px 0 140px;
+    }
+
+    .travel-timeline__heading {
+        margin-bottom: 80px;
+    }
+
+    .travel-timeline__sections {
+        padding: 0 40px;
+    }
+
+    .travel-section {
+        grid-template-columns: repeat(8, 1fr);
+        gap: 0 16px;
+        margin-bottom: 140px;
+    }
+
+    .travel-section--layout-a .travel-section__image-block,
+    .travel-section--layout-c .travel-section__image-block {
+        grid-column: 1 / 5;
+    }
+
+    .travel-section--layout-a .travel-section__text,
+    .travel-section--layout-c .travel-section__text {
+        grid-column: 5 / 9;
+        padding-left: 24px;
+    }
+
+    .travel-section--layout-b .travel-section__image-block {
+        grid-column: 5 / 9;
+    }
+
+    .travel-section--layout-b .travel-section__text {
+        grid-column: 1 / 5;
+    }
+}
+
+@media (max-width: 768px) {
+    .travel-timeline {
+        padding: 80px 0 100px;
+    }
+
+    .travel-timeline__heading {
+        font-size: clamp(2.4rem, 8vw, 3.5rem);
+        margin-bottom: 60px;
+    }
+
+    .travel-timeline__svg {
+        display: none;
+    }
+
+    .travel-timeline__sections {
+        padding: 0 24px;
+    }
+
+    .travel-section {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        margin-bottom: 80px;
+    }
+
+    .travel-section__text {
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .travel-section__coordinates {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+        white-space: normal;
+        margin-top: 16px;
+    }
+
+    .travel-section__image-block::before {
+        padding-bottom: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    .travel-timeline {
+        padding: 60px 0 80px;
+    }
+
+    .travel-timeline__heading {
+        margin-bottom: 44px;
+        padding: 0 20px;
+    }
+
+    .travel-timeline__sections {
+        padding: 0 16px;
+    }
+
+    .travel-section {
+        margin-bottom: 60px;
+        gap: 20px;
+    }
+}

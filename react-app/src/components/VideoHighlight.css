@@ -1,0 +1,97 @@
+.video-highlight-section {
+    position: relative;
+    padding: 80px 5vw;
+    background-color: #f4ede6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.video-highlight-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 70vh;
+    min-height: 400px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    /* Keep wrapper above section background but below leaves if needed */
+}
+
+.video-highlight-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 1;
+}
+
+.video-highlight-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    /* Elegant dark layer to make text pop */
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-highlight-logo {
+    width: clamp(200px, 40vw, 450px);
+    z-index: 3;
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.4));
+    object-fit: contain;
+}
+
+/* ── Leaf Decorations ── */
+.highlight-leaf {
+    position: absolute;
+    top: 50%;
+    width: clamp(150px, 25vw, 350px);
+    z-index: 5;
+    pointer-events: none;
+    /* Let clicks pass through */
+    object-fit: contain;
+}
+
+.leaf-left {
+    left: -7%;
+    transform: translateY(-50%) rotate(175deg);
+}
+
+.leaf-right {
+    right: -7%;
+    transform: translateY(-50%) scaleX(-1) rotate(184deg);
+}
+
+/* ── Corner Decorations ── */
+.highlight-corner {
+    position: absolute;
+    width: clamp(100px, 15vw, 250px);
+    z-index: 5;
+    pointer-events: none;
+    object-fit: contain;
+    opacity: 0.4;
+}
+
+.corner-tl {
+    top: 3%;
+    left: 0%;
+    transform: rotate(45deg);
+}
+
+.corner-br {
+    bottom: 5%;
+    right: 1%;
+    transform: scaleX(-1) scaleY(-1) rotate(-180deg);
+}

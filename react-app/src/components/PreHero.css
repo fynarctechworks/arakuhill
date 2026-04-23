@@ -1,0 +1,268 @@
+/* PreHero.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+.pre-hero {
+    position: relative;
+    width: 100%;
+    height: 274vh;
+    overflow: clip;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a1a;
+    z-index: 10;
+}
+
+.pre-hero-img-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.pre-hero-bg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+    will-change: transform, filter;
+}
+
+.pre-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.7) 0%,
+            rgba(0, 0, 0, 0.4) 25%,
+            rgba(0, 0, 0, 0.4) 75%,
+            rgba(0, 0, 0, 0.7) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* The content wrapper */
+.pre-hero-sticky-content {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 320vh;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 120px;
+}
+
+/* ================== HERO LOGO (above title) ================== */
+.pre-hero-hero-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 32px;
+    z-index: 5;
+    will-change: transform, opacity;
+}
+
+.pre-hero-hero-logo-img {
+    height: clamp(60px, 8vw, 100px);
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
+}
+
+/* ================== CENTERED TEXT ================== */
+.pre-hero-text-container {
+    text-align: center;
+    color: #fcfafa;
+    padding: 0 2rem;
+    max-width: 850px;
+    z-index: 5;
+}
+
+.pre-hero-main-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(2.2rem, 6vw, 6rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin: 0 0 1rem 0;
+    line-height: 1.1;
+}
+
+.pre-hero-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.85rem, 1.5vw, 1.25rem);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* ================== THE FLOATING CUP ================== */
+.pre-hero-cup {
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    width: clamp(180px, 40vw, 550px);
+    z-index: 6;
+    pointer-events: none;
+    will-change: transform;
+    max-width: 360px;
+    opacity: 0;
+}
+
+/* ================== FINAL TEXT BESIDE CUP ================== */
+.pre-hero-final-text {
+    position: absolute;
+    top: 65%;
+    left: 8%;
+    width: 35%;
+    max-width: 500px;
+    color: #fcfafa;
+    z-index: 5;
+    opacity: 0;
+    transform: translateX(-30px);
+    text-align: left;
+}
+
+.pre-hero-final-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.8rem, 5vw, 4.5rem);
+    font-weight: 300;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.pre-hero-final-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.85rem, 1.2vw, 1.25rem);
+    font-weight: 200;
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+/* ================== LARGE TABLET (≤ 1180px) ================== */
+@media (max-width: 1180px) {
+    .pre-hero-bg {
+        height: 125%;
+    }
+}
+
+/* ================== TABLET (≤ 1024px) ================== */
+@media (max-width: 1024px) {
+    .pre-hero {
+        height: 240vh;
+    }
+
+    .pre-hero-sticky-content {
+        height: 280vh;
+        padding-top: 490px;
+    }
+
+    .pre-hero-cup {
+        max-width: 300px;
+    }
+
+    .pre-hero-final-text {
+        left: 6%;
+        width: 40%;
+    }
+}
+
+/* ================== MOBILE (≤ 768px) ================== */
+@media (max-width: 768px) {
+    .pre-hero {
+        height: 220vh;
+    }
+
+    .pre-hero-sticky-content {
+        height: 260vh;
+        padding-top: 390px;
+    }
+
+    .pre-hero-hero-logo {
+        margin-bottom: 20px;
+    }
+
+    .pre-hero-hero-logo-img {
+        height: 100px;
+    }
+
+    .pre-hero-text-container {
+        padding: 0 1.2rem;
+    }
+
+    .pre-hero-cup {
+        max-width: 320px;
+        top: 35%;
+    }
+
+    .pre-hero-bg {
+        height: 130%;
+    }
+
+    .pre-hero-final-text {
+        top: 70%;
+        left: 20%;
+        width: 75%;
+    }
+
+    .pre-hero-final-title {
+        margin-bottom: 12px;
+        font-size: clamp(1.8rem, 12vw, 9.5rem);
+    }
+
+    .pre-hero-final-subtitle {
+        font-size: clamp(1.25rem, 1.2vw, 1.25rem);
+        font-weight: 400;
+        text-align: center;
+    }
+}
+
+/* ================== SMALL MOBILE (≤ 480px) ================== */
+@media (max-width: 480px) {
+    .pre-hero {
+        height: 200vh;
+    }
+
+    .pre-hero-sticky-content {
+        height: 240vh;
+        padding-top: 320px;
+    }
+
+    .pre-hero-hero-logo-img {
+        height: 52px;
+    }
+
+    .pre-hero-cup {
+        max-width: 280px;
+        top: 35%;
+    }
+
+    .pre-hero-final-text {
+        top: 70%;
+        left: 4%;
+        width: 90%;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+    }
+
+    .pre-hero-cup {
+        width: clamp(280px, 40vw, 550px);
+    }
+
+    .pre-hero-bg {
+        height: 120%;
+    }
+}

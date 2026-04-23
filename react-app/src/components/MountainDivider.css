@@ -1,0 +1,37 @@
+/* ═══════════════════════════════════════════════
+   Mountain Divider — Layered Silhouette Separator
+   Soft muted palette matching the editorial beige
+   ═══════════════════════════════════════════════ */
+
+.mountain-divider {
+    position: relative;
+    width: 100%;
+    margin-top: -1px;
+    /* prevents sub-pixel gap */
+    background-color: #EAE6DC;
+    line-height: 0;
+}
+
+.mountain-divider__svg {
+    display: block;
+    width: 100%;
+    height: clamp(100px, 14vw, 200px);
+}
+
+/* Back layer — distant mountains (lightest) */
+.mountain-divider__layer--back {
+    fill: #ddd8cf;
+    opacity: 0.5;
+}
+
+/* Mid layer — middle range */
+.mountain-divider__layer--mid {
+    fill: #d5d0c6;
+    opacity: 0.6;
+}
+
+/* Front layer — foreground hills (darkest) */
+.mountain-divider__layer--front {
+    fill: #cec8bc;
+    opacity: 0.55;
+}

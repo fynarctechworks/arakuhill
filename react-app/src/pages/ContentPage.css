@@ -1,0 +1,227 @@
+/* ═══════════════════════════════════════════════
+   ContentPage — Minimal Luxury Page Layout
+   Consistent with Araku Hill Coffee brand
+   ═══════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap');
+
+/* ── Page Container ──────────────────────────── */
+
+.content-page {
+    min-height: 100vh;
+    background: #EAE6DC;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Navigation ──────────────────────────────── */
+
+.content-page__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px clamp(24px, 6vw, 80px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(234, 230, 220, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(46, 46, 46, 0.05);
+}
+
+.content-page__back {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #2E2E2E;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: opacity 0.2s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.content-page__back:hover {
+    opacity: 0.6;
+}
+
+.content-page__brand {
+    font-family: 'Rallisaguen', 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(16px, 1.3vw, 20px);
+    font-weight: 700;
+    color: #2E2E2E;
+    letter-spacing: 0.02em;
+}
+
+/* ── Hero Header ─────────────────────────────── */
+
+.content-page__hero {
+    text-align: center;
+    padding: clamp(60px, 12vh, 140px) clamp(24px, 8vw, 120px) clamp(40px, 6vh, 60px);
+}
+
+.content-page__title {
+    font-family: 'Rallisaguen', 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(36px, 5vw, 72px);
+    font-weight: 700;
+    color: #2E2E2E;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+.content-page__subtitle {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(14px, 1.1vw, 18px);
+    font-weight: 300;
+    color: rgba(46, 46, 46, 0.55);
+    line-height: 1.6;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.content-page__divider {
+    width: 40px;
+    height: 1px;
+    background: rgba(46, 46, 46, 0.15);
+    margin: 40px auto 0;
+}
+
+/* ── Content Body ────────────────────────────── */
+
+.content-page__body {
+    flex: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 clamp(24px, 6vw, 60px) clamp(60px, 10vh, 100px);
+    width: 100%;
+}
+
+.content-page__section {
+    margin-bottom: clamp(36px, 5vh, 56px);
+}
+
+.content-page__section:last-child {
+    margin-bottom: 0;
+}
+
+.content-page__section-heading {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(22px, 2vw, 30px);
+    font-weight: 500;
+    color: #2E2E2E;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.content-page__section-body {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(14px, 1vw, 16px);
+    font-weight: 300;
+    color: rgba(46, 46, 46, 0.65);
+    line-height: 1.85;
+    margin-bottom: 16px;
+}
+
+.content-page__section-body:last-child {
+    margin-bottom: 0;
+}
+
+/* ── Lists ───────────────────────────────────── */
+
+.content-page__list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.content-page__list-item {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(13px, 1vw, 15px);
+    font-weight: 300;
+    color: rgba(46, 46, 46, 0.6);
+    line-height: 1.6;
+    padding-left: 20px;
+    position: relative;
+}
+
+.content-page__list-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #6B5B3E;
+    opacity: 0.4;
+}
+
+/* ── Page Footer ─────────────────────────────── */
+
+.content-page__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px clamp(24px, 6vw, 80px);
+    border-top: 1px solid rgba(46, 46, 46, 0.06);
+}
+
+.content-page__footer-link {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #2E2E2E;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: opacity 0.2s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.content-page__footer-link:hover {
+    opacity: 0.6;
+}
+
+.content-page__footer-copy {
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    color: rgba(46, 46, 46, 0.3);
+    letter-spacing: 0.08em;
+}
+
+/* ── Responsive ──────────────────────────────── */
+
+@media (max-width: 768px) {
+    .content-page__nav {
+        padding: 16px 20px;
+    }
+
+    .content-page__hero {
+        padding: 48px 20px 32px;
+    }
+
+    .content-page__body {
+        padding: 0 20px 60px;
+    }
+
+    .content-page__footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 20px;
+    }
+}

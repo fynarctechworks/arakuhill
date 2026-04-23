@@ -1,0 +1,39 @@
+/* ═══════════════════════════════════════════════
+   Minimal Mountain Divider — Clean & Elegant
+   Subtle monochromatic palette matching the 
+   surrounding #f4ede6 light theme seamlessly.
+   ═══════════════════════════════════════════════ */
+
+.minimal-mountain-divider {
+    position: relative;
+    width: 100%;
+    margin-top: -1px;
+    /* Sky background blends perfectly into BrandStory above */
+    background-color: #f4ede6;
+    line-height: 0;
+}
+
+.minimal-mountain__svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* Optional: limit max height if it becomes too large on desktop */
+    max-height: 300px;
+}
+
+/* Back layer — faint distant mountains */
+.minimal-mountain__layer--back {
+    fill: #efe8df; 
+}
+
+/* Mid layer — slightly darker ridges */
+.minimal-mountain__layer--mid {
+    fill: #e9e0d4; 
+}
+
+/* Front layer — matches Bean Journey floor so there's no hard bottom edge */
+.minimal-mountain__layer--front {
+    fill: #f4ede6; 
+    /* Adding a subtle inset drop shadow effect on the front ridges */
+    filter: drop-shadow(0px -5px 15px rgba(0,0,0,0.03));
+}

@@ -1,0 +1,399 @@
+/* ContactPage.css */
+
+.contact-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    overflow-y: auto;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Background Image & Blur Overlay --- */
+.contact-bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/home-bg-araku.webp');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.contact-bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 20, 15, 0.6);
+    /* Darker tint */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 1;
+}
+
+/* --- Navigation --- */
+.contact-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    position: relative;
+    z-index: 100;
+}
+
+/* --- Navigation Menu --- */
+.contact-menu-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.contact-menu-btn {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    padding: 0.5rem;
+}
+
+.contact-menu-btn:hover {
+    opacity: 0.7;
+}
+
+.contact-nav-logo {
+    height: 36px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    /* Turn black logo into white */
+}
+
+
+/* --- Main Grid Layout --- */
+.contact-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 2rem 4rem;
+    position: relative;
+    z-index: 10;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+/* --- Left Side: Info --- */
+.contact-info-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 300;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.1;
+    color: #ffffff;
+}
+
+.contact-about {
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 0.5rem 0;
+    max-width: 500px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.contact-detail-item h3 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 0.25rem 0;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-detail-item p,
+.contact-detail-item a {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 0;
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.contact-detail-item a:hover {
+    opacity: 0.7;
+}
+
+/* --- Branches --- */
+.contact-branches {
+    margin-bottom: 2.5rem;
+}
+
+.contact-branches h3 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 1.25rem 0;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.branch-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.branch-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.branch-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.branch-name {
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin: 0;
+    color: #ffffff;
+}
+
+.branch-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.branch-link:hover {
+    color: #ffffff;
+}
+
+.branch-link svg {
+    transition: transform 0.3s ease;
+}
+
+.branch-link:hover svg {
+    transform: translate(2px, -2px);
+}
+
+.contact-socials h3 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0 0 1.25rem 0;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.social-links {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.03);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.social-links a:hover {
+    background: #ffffff;
+    color: #1a1a1a;
+    border-color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Right Side: Form --- */
+.contact-form-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form-wrapper {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 2.5rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form-wrapper h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2.25rem;
+    font-weight: 400;
+    margin: 0 0 1rem 0;
+    color: #ffffff;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 0.85rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    margin-top: 1rem;
+    background: #ffffff;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-submit-btn:hover {
+    background: #e6e6e6;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+    .contact-page {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+        /* Fallback to scroll if too small */
+    }
+
+    .contact-main {
+        padding: 2rem 2rem 4rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .contact-form-wrapper {
+        padding: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-main {
+        padding: 1.5rem 1.5rem 4rem;
+    }
+
+    .contact-nav {
+        padding: 1rem 1.5rem;
+    }
+
+    .contact-form-wrapper {
+        padding: 2rem 1.5rem;
+    }
+}

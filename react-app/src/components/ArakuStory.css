@@ -1,0 +1,238 @@
+/* ═══════════════════════════════════════════════
+   ArakuStory — Editorial Brand Storytelling
+   Parallax hero + Stats + Editorial + Quote
+   ═══════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400&display=swap');
+
+/* ── Section Container ───────────────────────── */
+
+.araku-story {
+    position: relative;
+    width: 100%;
+    background-color: #EAE6DC;
+    overflow: hidden;
+}
+
+/* ══════════════════════════════════════════════
+   1. Parallax Hero Image
+   ══════════════════════════════════════════════ */
+
+.araku-story__hero {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.araku-story__hero-img {
+    position: absolute;
+    inset: -20% 0 0 0;
+    width: 100%;
+    height: 140%;
+    object-fit: cover;
+    will-change: transform;
+}
+
+.araku-story__hero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg,
+            rgba(20, 18, 14, 0.15) 0%,
+            rgba(20, 18, 14, 0.55) 60%,
+            rgba(20, 18, 14, 0.75) 100%);
+    padding: 40px;
+    text-align: center;
+}
+
+.araku-story__hero-title {
+    font-family: 'Rallisaguen', 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(42px, 7vw, 100px);
+    font-weight: 700;
+    color: #F5F1EB;
+    letter-spacing: 0.03em;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    will-change: transform, opacity;
+}
+
+.araku-story__hero-sub {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(13px, 1.3vw, 18px);
+    font-weight: 300;
+    color: rgba(245, 241, 235, 0.7);
+    letter-spacing: 0.12em;
+    max-width: 500px;
+    will-change: transform, opacity;
+}
+
+/* ══════════════════════════════════════════════
+   2. Stats Bar
+   ══════════════════════════════════════════════ */
+
+.araku-story__stats {
+    display: flex;
+    justify-content: center;
+    gap: clamp(24px, 5vw, 80px);
+    padding: clamp(40px, 6vh, 72px) clamp(24px, 5vw, 80px);
+    background: #2E2E2E;
+}
+
+.araku-story__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    will-change: transform, opacity;
+}
+
+.araku-story__stat-value {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(28px, 3.5vw, 52px);
+    font-weight: 600;
+    color: #F5F1EB;
+    letter-spacing: 0.02em;
+    line-height: 1;
+}
+
+.araku-story__stat-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(9px, 0.8vw, 12px);
+    font-weight: 300;
+    color: rgba(245, 241, 235, 0.45);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+}
+
+/* ══════════════════════════════════════════════
+   3. Editorial Two-Column Text
+   ══════════════════════════════════════════════ */
+
+.araku-story__editorial {
+    display: flex;
+    gap: clamp(40px, 6vw, 100px);
+    padding: clamp(60px, 10vh, 120px) clamp(40px, 8vw, 140px);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.araku-story__edit-left {
+    flex: 0 0 40%;
+    will-change: transform, opacity;
+}
+
+.araku-story__edit-right {
+    flex: 1;
+    will-change: transform, opacity;
+}
+
+.araku-story__edit-heading {
+    font-family: 'Rallisaguen', 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(30px, 4vw, 56px);
+    font-weight: 700;
+    color: #2E2E2E;
+    letter-spacing: 0.02em;
+    line-height: 1.15;
+    margin-bottom: 24px;
+}
+
+.araku-story__edit-body {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(13px, 1vw, 16px);
+    font-weight: 300;
+    color: rgba(46, 46, 46, 0.65);
+    line-height: 1.85;
+    margin-bottom: 24px;
+}
+
+.araku-story__edit-body:last-child {
+    margin-bottom: 0;
+}
+
+/* ══════════════════════════════════════════════
+   4. Pull-Quote Strip
+   ══════════════════════════════════════════════ */
+
+.araku-story__quote {
+    padding: clamp(48px, 8vh, 100px) clamp(40px, 8vw, 140px);
+    text-align: center;
+    will-change: transform, opacity;
+}
+
+.araku-story__quote-text {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(20px, 2.5vw, 36px);
+    font-weight: 300;
+    font-style: italic;
+    color: #6B5B3E;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.araku-story__quote-text::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: rgba(107, 91, 62, 0.3);
+    margin: 0 auto 28px;
+}
+
+.araku-story__quote-text::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: rgba(107, 91, 62, 0.3);
+    margin: 28px auto 0;
+}
+
+/* ══════════════════════════════════════════════
+   Responsive
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+    .araku-story__hero {
+        height: 70vh;
+    }
+
+    .araku-story__stats {
+        flex-wrap: wrap;
+        gap: 24px 48px;
+    }
+
+    .araku-story__editorial {
+        flex-direction: column;
+        gap: 24px;
+        padding: 48px 24px;
+    }
+
+    .araku-story__edit-left {
+        flex: none;
+    }
+
+    .araku-story__quote {
+        padding: 40px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .araku-story__hero {
+        height: 60vh;
+    }
+
+    .araku-story__stats {
+        gap: 16px 32px;
+        padding: 32px 16px;
+    }
+
+    .araku-story__stat-value {
+        font-size: 24px;
+    }
+}
