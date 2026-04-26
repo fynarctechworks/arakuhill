@@ -156,11 +156,6 @@ export default function PreHero({ onMenuClick }) {
                 }
             });
             const width = window.innerWidth;
-            const height = window.innerHeight;
-            const is390x844 = width === 390 && height === 844;
-            const is402x874 = width === 402; // Height varies on mobile browsers due to address bar
-            const is412x915 = width === 412 && height === 915;
-            const is412x917 = width === 412 && height === 917;
             const isMobile = width <= 480;
             const isTablet = width <= 768 && width > 480;
             const isLargeTablet = width <= 1180 && width > 768;
@@ -170,43 +165,21 @@ export default function PreHero({ onMenuClick }) {
             let targetX = '-1.7528vw';
             let targetY = 59.1811;
 
-            if (is390x844) {
-                targetXPercent = -44.166;
-                targetYPercent = -36.3043;
-                targetX = '-0.1255vw';
-                targetY = 450.068;
-            } else if (is402x874) {
-                targetXPercent = -44.3593;
-                targetYPercent = -36.7582;
-                targetX = '-0.1214vw';
-                targetY = 479.84;
-            } else if (is412x917) {
-                targetXPercent = -44.3299;
-                targetYPercent = -36.6891;
-                targetX = '-0.122vw';
-                targetY = 510.489;
-            } else if (is412x915) {
-                targetXPercent = -44.3109;
-                targetYPercent = -36.6444;
-                targetX = '-0.1224vw';
-                targetY = 510.835;
-            } else if (isMobile) {
-                targetXPercent = -44.3299;
-                targetYPercent = -36.6891;
-                targetX = '-0.122vw';
-                targetY = 510.489;
+            if (isMobile) {
+                targetXPercent = -44.35;
+                targetYPercent = -36.75;
+                targetX = '-0.12vw';
+                targetY = '55vh'; // Responsive height scaling
             } else if (isTablet) {
-                // Requested 768x1024 tablet endpoints
                 targetXPercent = -44.3751;
                 targetYPercent = -36.7952;
                 targetX = '-0.121vw';
-                targetY = 742.297;
+                targetY = '72vh'; // Responsive height scaling
             } else if (isLargeTablet) {
-                // Requested 1180x820 tablet endpoints
                 targetXPercent = -46.8713;
                 targetYPercent = -42.655;
                 targetX = '-0.0673vw';
-                targetY = 824.321;
+                targetY = '100vh'; // Responsive height scaling
             }
 
             parallaxTl.to(cupRef.current, {
