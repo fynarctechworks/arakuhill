@@ -158,7 +158,7 @@ export default function PreHero({ onMenuClick }) {
             const width = window.innerWidth;
             const height = window.innerHeight;
             const is390x844 = width === 390 && height === 844;
-            const is402x874 = width === 402 && height === 874;
+            const is402x874 = width === 402; // Height varies on mobile browsers due to address bar
             const is412x915 = width === 412 && height === 915;
             const is412x917 = width === 412 && height === 917;
             const isMobile = width <= 480;
