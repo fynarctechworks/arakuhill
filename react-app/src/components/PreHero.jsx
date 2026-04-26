@@ -158,6 +158,7 @@ export default function PreHero({ onMenuClick }) {
             const width = window.innerWidth;
             const height = window.innerHeight;
             const is390x844 = width === 390 && height === 844;
+            const is402x874 = width === 402 && height === 874;
             const is412x915 = width === 412 && height === 915;
             const is412x917 = width === 412 && height === 917;
             const isMobile = width <= 480;
@@ -174,6 +175,11 @@ export default function PreHero({ onMenuClick }) {
                 targetYPercent = -36.3043;
                 targetX = '-0.1255vw';
                 targetY = 450.068;
+            } else if (is402x874) {
+                targetXPercent = -44.3593;
+                targetYPercent = -36.7582;
+                targetX = '-0.1214vw';
+                targetY = 479.84;
             } else if (is412x917) {
                 targetXPercent = -44.3299;
                 targetYPercent = -36.6891;
