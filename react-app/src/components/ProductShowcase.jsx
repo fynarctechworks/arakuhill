@@ -4,10 +4,9 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './ProductShowcase.css'
 
-// Built sequence of 112 frames (48-160, skip 105)
+// Built sequence of 143 frames (33-175, continuous)
 const FRAME_NUMBERS = []
-for (let i = 48; i <= 160; i++) {
-    if (i === 105) continue
+for (let i = 33; i <= 175; i++) {
     FRAME_NUMBERS.push(i)
 }
 const FRAME_COUNT = FRAME_NUMBERS.length
@@ -222,7 +221,7 @@ export default function ProductShowcase() {
         const images = []
         for (let i = 0; i < FRAME_COUNT; i++) {
             const img = new Image()
-            img.src = `/images/red-wine-sequence/${FRAME_NUMBERS[i]}.png`
+            img.src = `/images/new-red-wine-sequence/ezgif-frame-${String(FRAME_NUMBERS[i]).padStart(3, '0')}-Photoroom.png`
             images.push(img)
         }
 

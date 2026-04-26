@@ -133,11 +133,31 @@
 
 /* Copyright */
 .footer__copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
     font-family: 'Outfit', sans-serif;
     font-size: 11px;
     font-weight: 300;
     color: rgba(46, 46, 46, 0.3);
     letter-spacing: 0.08em;
+}
+
+.footer__powered {
+    color: rgba(46, 46, 46, 0.4);
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+.footer__powered a {
+    color: inherit;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.footer__powered a:hover {
+    color: #2E2E2E;
 }
 
 /* ══════════════════════════════════════════════
@@ -176,6 +196,10 @@
         gap: 24px;
         text-align: center;
         padding: 28px 24px;
+    }
+
+    .footer__copyright {
+        align-items: center;
     }
 
     .footer__brand {

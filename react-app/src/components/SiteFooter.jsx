@@ -112,9 +112,12 @@ export default function SiteFooter() {
                     ))}
                 </div>
 
-                <span className="footer__copyright">
-                    © {new Date().getFullYear()} Araku Hill Coffee. All rights reserved.
-                </span>
+                <div className="footer__copyright">
+                    <span>© {new Date().getFullYear()} Araku Hill Coffee. All rights reserved.</span>
+                    <span className="footer__powered">
+                        Powered by <a href="http://infynarc.com/" target="_blank" rel="noopener noreferrer">Fynarc Techworks Private Limited</a>
+                    </span>
+                </div>
             </div>
 
         </footer>
