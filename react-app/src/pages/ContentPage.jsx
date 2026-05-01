@@ -1,5 +1,4 @@
 import { useParams, Link, useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
 import PAGES from './pageData'
 import './ContentPage.css'
 
@@ -15,11 +14,6 @@ export default function ContentPage() {
     const { slug } = useParams()
     const navigate = useNavigate()
     const page = PAGES[slug]
-
-    // Scroll to top on page change
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [slug])
 
     if (!page) {
         return (

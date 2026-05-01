@@ -11,73 +11,73 @@ import '../components/ProductShowcase.css'; // Reusing modal styles if needed, t
 const PRODUCTS = [
     {
         id: 'americano', name: 'Americano', image: '/images/products/Americano.webp',
-        origin: 'Araku Valley', altitude: '900–1100m', process: 'Washed',
+        origin: 'Single Origin', process: 'Medium Roast',
         tastingNotes: 'Bold, clean, dark cocoa',
         description: 'A classic, strong black coffee. Hot water is carefully poured over rich, bold espresso, showcasing the pure, unadulterated flavors of our premium Araku beans. Perfect for those who appreciate simplicity and strength.'
     },
     {
         id: 'araku-latte', name: 'Araku Latte', image: '/images/products/Araku Latte.webp',
-        origin: 'Araku Valley Signature', altitude: '1000–1200m', process: 'Natural',
-        tastingNotes: 'Caramel, toasted nuts, creamy finish',
+        origin: 'Single Origin', process: 'Medium Roast',
+        tastingNotes: 'Espresso, creamy finish',
         description: 'Our signature latte combines our nuanced espresso with velvety steamed milk. It’s a smooth, creamy beverage that perfects the balance between robust coffee flavors and natural milk sweetness.'
     },
     {
         id: 'cappuccino', name: 'Cappuccino', image: '/images/products/Cappuccino.webp',
-        origin: 'Araku Valley', altitude: '1000–1200m', process: 'Medium Roast',
-        tastingNotes: 'Cocoa, hazelnut, rich froth',
+        origin: 'Single Origin', process: 'Medium Roast',
+        tastingNotes: 'Espresso, rich froth',
         description: 'A beautifully crafted classic. Equal parts espresso, steamed milk, and a luxurious layer of microfoam. This drink offers a bold coffee presence wrapped in a pillowy, airy texture.'
     },
     {
         id: 'caramel-frappe', name: 'Caramel Frappe', image: '/images/products/Caramel Frappe.webp',
-        origin: 'Dessert Blend', altitude: 'Multi-Origin', process: 'Blended Cold',
+        origin: 'Single Origin', process: 'Medium Roast',
         tastingNotes: 'Buttery caramel, vanilla, sweet cream',
         description: 'A sweet indulgence. We blend our cold brew with rich caramel syrup, milk, and ice, topping it off with whipped cream and a decadent caramel drizzle. A perfect treat to beat the heat.'
     },
     {
         id: 'red-wine-espresso', name: 'Red Wine Espresso', image: '/images/products/redwine Espresso.webp',
-        origin: 'Araku Valley', altitude: '1100–1300m', process: 'Natural Fermented',
+        origin: 'Single Origin', process: 'Medium Roast',
         tastingNotes: 'Winey notes, dark cherry, rich chocolate',
         description: 'Our premium Red Wine Espresso is crafted from specially fermented beans, offering a sophisticated profile with deep winy notes and a luxurious chocolate finish. A truly unique experience.'
     },
     {
         id: 'hot-chocolate', name: 'Hot Chocolate', image: '/images/products/Hot Chocolate.webp',
-        origin: 'Premium Cocoa Blend', altitude: 'N/A', process: 'Artisanal Melt',
+        origin: 'Single Origin', process: 'Cocoa Melt',
         tastingNotes: 'Rich cocoa, warm vanilla, velvety smooth',
         description: 'Pure comfort in a cup. We use the finest melted artisanal chocolate whisked perfectly into steaming hot milk. Rich, thick, and undeniably luxurious, it’s a chocolate lover\'s dream.'
     },
     {
         id: 'hot-mocha', name: 'Hot Mocha', image: '/images/products/Hot Mocha.webp',
-        origin: 'Araku Valley', altitude: '1000–1200m', process: 'Medium-Dark Roast',
+        origin: 'Single Origin', process: 'Medium Roast',
         tastingNotes: 'Dark chocolate, toasted almond, bold espresso',
         description: 'The best of both worlds. A harmonious blend of our robust espresso, velvety steamed milk, and rich artisanal cocoa syrup. It’s a decadent, chocolatey coffee experience.'
     },
     {
         id: 'iced-coffee', name: 'Iced Coffee', image: '/images/products/Iced coffee.webp',
-        origin: 'Araku Valley', altitude: '900–1100m', process: 'Cold Infusion',
+        origin: 'Single Origin', process: 'Medium Roast',
         tastingNotes: 'Smooth cocoa, crisp finish, refreshing',
         description: 'Crisp, cold, and immensely refreshing. Our iced coffee is brewed slowly to extract maximum flavor without bitterness, then served pure and simple over cracked ice.'
     },
     {
         id: 'litchi-espresso', name: 'Litchi Espresso', image: '/images/products/Litchi Espresso.webp',
-        origin: 'Araku Valley', altitude: '1100–1300m', process: 'Light Roast',
+        origin: 'Single Origin', process: 'Medium Roast',
         tastingNotes: 'Floral, sweet litchi, bright espresso',
         description: 'An exotic, floral delight. We pair the sweet, fragrant notes of fresh litchi with the bright acidity of our carefully pulled espresso. A uniquely refreshing cold beverage that dances on the palate.'
     },
     {
         id: 'macchiato', name: 'Macchiato', image: '/images/products/Macchiato.webp',
-        origin: 'Araku Valley', altitude: '1100–1300m', process: 'Medium Roast',
+        origin: 'Single Origin', process: 'Medium Roast',
         tastingNotes: 'Intense, bold, touch of cream',
         description: 'For the espresso purist. A bold, concentrated double shot of our finest espresso marked with just a dollop of textured milk foam. A robust and intense coffee experience.'
     },
     {
         id: 'spanish-latte', name: 'Spanish Latte', image: '/images/products/Spanish Latte.webp',
-        origin: 'Araku Valley', altitude: '1000–1200m', process: 'Medium Roast',
+        origin: 'Single Origin', process: 'Medium Roast',
         tastingNotes: 'Sweetened condensed milk, rich cocoa, creamy',
         description: 'Rich, sweet, and incredibly smooth. Our Spanish Latte combines bold espresso with velvety textured milk and a touch of sweetened condensed milk for a distinctly luscious profile.'
     },
     {
         id: 'vietnamese-frappe', name: 'Vietnamese Frappe', image: '/images/products/Vietnamese Frappe.webp',
-        origin: 'Multi-Origin', altitude: 'N/A', process: 'Blended Cold',
+        origin: 'Single Origin', process: 'Medium Roast',
         tastingNotes: 'Intense coffee, sweet condensed milk, ice-cold',
         description: 'Inspired by traditional Vietnamese coffee. We blend strong, dark-roasted coffee with rich, sweet condensed milk and ice to create a powerfully energizing and sweet frozen treat.'
     }
@@ -95,10 +95,8 @@ export default function ProductsPage() {
     const modalContentRef = useRef(null);
     const modalImgRef = useRef(null);
 
-    // Scroll to top on mount and manage nav blur state
+    // Manage nav blur state
     useEffect(() => {
-        window.scrollTo(0, 0);
-
         const handleScroll = () => {
             if (window.scrollY > 50) {
                 setNavDark(true);
@@ -250,10 +248,7 @@ export default function ProductsPage() {
                                     <span className="product-modal__detail-label">Origin</span>
                                     <span className="product-modal__detail-value">{selectedProduct.origin}</span>
                                 </div>
-                                <div className="product-modal__detail">
-                                    <span className="product-modal__detail-label">Altitude</span>
-                                    <span className="product-modal__detail-value">{selectedProduct.altitude}</span>
-                                </div>
+
                                 <div className="product-modal__detail">
                                     <span className="product-modal__detail-label">Process</span>
                                     <span className="product-modal__detail-value">{selectedProduct.process}</span>

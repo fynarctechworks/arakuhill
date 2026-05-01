@@ -25,6 +25,8 @@ function onIntroComplete() {
     }, 100);
 }
 
+
+
 export default function HomePage() {
     const [sidebarOpen, setSidebarOpen] = useState(false)
 

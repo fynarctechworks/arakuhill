@@ -108,40 +108,9 @@
     /* Offset to visually center the play triangle */
 }
 
-.gallery-item-wrapper:hover .video-play-overlay {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1.2);
-}
+/* ── Play Overlay Hover Effect Removed ── */
 
-/* ── Mute Toggle ── */
-.video-mute-toggle {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 36px;
-    height: 36px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    cursor: pointer;
-    z-index: 5;
-    transition: background 0.2s ease, transform 0.2s ease;
-}
 
-.video-mute-toggle:hover {
-    background: rgba(255, 255, 255, 0.4);
-    transform: scale(1.1);
-}
-
-.video-mute-toggle svg {
-    width: 18px;
-    height: 18px;
-}
 
 /* ── Fullscreen Popup Modal ── */
 .gallery-popup-overlay {

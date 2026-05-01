@@ -92,7 +92,7 @@ export default function BrandStory() {
             {/* Background Video */}
             <video
                 className="brand-story-bg-video"
-                src={shouldLoadVideo ? "/assets/brand-story-video.mp4" : undefined}
+                src={shouldLoadVideo ? "/assets/brand-story-video.mp4#t=0.001" : undefined}
                 preload="none"
                 autoPlay
                 loop

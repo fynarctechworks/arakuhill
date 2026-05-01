@@ -28,7 +28,7 @@ const PAGES = {
             {
                 heading: 'Customer Favorites',
                 body: 'Our best sellers are chosen by you. These are the coffees that keep people coming back — the ones gifted to friends, brewed every morning, and shared at dinner parties.',
-                list: ['Red Wine Espresso', 'Golden Sunrise Blend', 'Mountain Cold Brew', 'Signature Pour Over'],
+                list: ['Red Wine Espresso', 'Hot Chocolate', 'Spanish Latte'],
             },
         ],
     },
@@ -62,16 +62,10 @@ const PAGES = {
     },
     'subscriptions': {
         title: 'Subscriptions',
-        subtitle: 'Never run out of extraordinary coffee. Delivered to your door.',
+        subtitle: 'Coming Soon',
         sections: [
             {
-                heading: 'How It Works',
-                body: 'Choose your frequency, pick your roast preference, and we handle the rest. Every shipment is freshly roasted before dispatch, ensuring peak flavour in every cup.',
-                list: ['Weekly — For the dedicated daily drinker', 'Bi-weekly — The perfect balance', 'Monthly — Explore at your pace'],
-            },
-            {
-                heading: 'Subscriber Benefits',
-                body: 'Members enjoy 15% off all orders, early access to limited editions, free shipping, and a quarterly tasting guide written by our head roaster.',
+                body: 'Our subscription service is currently under development. Please check back later!',
             },
         ],
     },
@@ -147,19 +141,10 @@ const PAGES = {
     },
     'awards': {
         title: 'Awards & Recognition',
-        subtitle: 'Honoured by the industry\'s most respected institutions.',
+        subtitle: 'Updating Soon',
         sections: [
             {
-                heading: 'International Acclaim',
-                body: 'Our coffees have been recognised at the world\'s most prestigious competitions and industry events, earning accolades for flavour, sustainability, and design.',
-                list: [
-                    '2024 — Best Single Origin, World Coffee Awards',
-                    '2023 — Gold Medal (Espresso), International Coffee Expo',
-                    '2023 — Sustainability Excellence, Global Fair Trade Council',
-                    '2022 — Top 10 Specialty Roasters, Specialty Coffee Association',
-                    '2022 — Best Packaging Design, Design Week Awards',
-                    '2021 — Heritage Brand of the Year, India Coffee Board',
-                ],
+                body: 'We are currently updating our awards and recognition page. Please check back later!',
             },
         ],
     },
@@ -208,48 +193,28 @@ const PAGES = {
     },
     'shipping': {
         title: 'Shipping',
-        subtitle: 'Fast, reliable delivery to your doorstep.',
+        subtitle: 'Coming Soon',
         sections: [
             {
-                heading: 'Domestic Shipping',
-                body: 'We ship across India via premium courier partners. Standard delivery takes 3–5 business days. Express delivery (1–2 days) is available in select metro cities.',
-                list: ['Free shipping on orders above ₹1,500', 'Express shipping — ₹150 flat', 'Cash on Delivery available'],
-            },
-            {
-                heading: 'International Shipping',
-                body: 'We ship to over 30 countries worldwide. International orders are dispatched within 48 hours and typically arrive within 7–14 business days depending on destination.',
+                body: 'Our shipping policy is currently being updated. Please check back later!',
             },
         ],
     },
     'returns': {
         title: 'Returns & Exchanges',
-        subtitle: 'Your satisfaction is our priority.',
+        subtitle: 'Coming Soon',
         sections: [
             {
-                heading: 'Our Policy',
-                body: 'If you are not completely satisfied with your purchase, we offer a no-questions-asked return within 7 days of delivery. Items must be unopened and in original packaging.',
-            },
-            {
-                heading: 'How to Return',
-                list: [
-                    'Email us at returns@arakuhillcoffee.com with your order number',
-                    'Our team will arrange a pickup within 48 hours',
-                    'Refund processed within 5–7 business days after inspection',
-                ],
+                body: 'Our returns and exchanges policy is currently being updated. Please check back later!',
             },
         ],
     },
     'track-order': {
         title: 'Track Your Order',
-        subtitle: 'Know exactly where your coffee is at every step.',
+        subtitle: 'Coming Soon',
         sections: [
             {
-                heading: 'Order Tracking',
-                body: 'Once your order is dispatched, you will receive a tracking link via email and SMS. Use the tracking number to monitor your shipment in real-time through our courier partner\'s website.',
-            },
-            {
-                heading: 'Need Help?',
-                body: 'If your tracking shows no updates for more than 48 hours, or if you have any concerns about your delivery, please reach out to us at arakuhillcoffee@gmail.com and we will sort it out promptly.',
+                body: 'Order tracking functionality is currently under development. Please check back later!',
             },
         ],
     },

@@ -23,7 +23,6 @@ export default function NotFound() {
     const btnRef = useRef(null)
 
     useEffect(() => {
-        window.scrollTo(0, 0)
         const ctx = gsap.context(() => {
 
             // 404 number entrance

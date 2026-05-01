@@ -10,6 +10,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function PreHero({ onMenuClick }) {
     const navigate = useNavigate();
+    
+    const handleLogoClick = () => {
+        if (window.location.pathname === '/') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            navigate('/');
+        }
+    };
+
     const navLogoRef = useRef(null);
     const heroLogoRef = useRef(null);
     const textRef = useRef(null);
@@ -251,7 +260,7 @@ export default function PreHero({ onMenuClick }) {
                         <line x1="3" y1="18" x2="21" y2="18" />
                     </svg>
                 </div>
-                <div className="crop-nav-center" style={{ width: '120px', height: '48px' }}>
+                <div className="crop-nav-center" style={{ width: '120px', height: '48px', cursor: 'pointer' }} onClick={handleLogoClick}>
                     <img ref={navLogoRef} src="/assets/Araku-hill-coffee-logo.svg" alt="Araku Hill Coffee" className="crop-logo" />
                 </div>
                 {/* Contact Button */}
@@ -264,7 +273,7 @@ export default function PreHero({ onMenuClick }) {
 
             <div className="pre-hero-sticky-content">
                 {/* Hero Logo — animates to nav center on scroll */}
-                <div className="pre-hero-hero-logo" ref={heroLogoRef}>
+                <div className="pre-hero-hero-logo" ref={heroLogoRef} onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
                     <img src="/assets/Araku-hill-coffee-logo.svg" alt="Araku Hill Coffee" className="pre-hero-hero-logo-img" />
                 </div>
 

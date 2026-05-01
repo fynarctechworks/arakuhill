@@ -139,7 +139,7 @@ export default function BeanJourney() {
                         >
                             {/* Full bleed background video */}
                             <video
-                                src={shouldLoadVideos ? step.video : undefined}
+                                src={shouldLoadVideos ? `${step.video}#t=0.001` : undefined}
                                 preload="none"
                                 className="journey-card-bg"
                                 autoPlay

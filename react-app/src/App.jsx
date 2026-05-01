@@ -8,21 +8,15 @@ import ContentPage from './pages/ContentPage'
 import ContactPage from './pages/ContactPage'
 import ProductsPage from './pages/ProductsPage'
 import NotFound from './pages/NotFound'
+import ScrollManager from './components/ScrollManager'
 
 // Register ScrollTrigger ONCE at module level
 gsap.registerPlugin(ScrollTrigger)
 
-// Force scroll to top on reload to prevent ScrollTrigger timeline conflicts
-if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual'
-}
-window.addEventListener('beforeunload', () => {
-    window.scrollTo(0, 0)
-})
-
 export default function App() {
     return (
         <BrowserRouter>
+            <ScrollManager />
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/page/contact-us" element={<ContactPage />} />

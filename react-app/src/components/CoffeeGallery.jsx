@@ -5,16 +5,11 @@ const galleryVideos = [
     { id: 1, src: '/assets/gallery-videos/gallery-1.mp4', alt: 'Coffee Reel 1' },
     { id: 2, src: '/assets/gallery-videos/gallery-2.mp4', alt: 'Coffee Reel 2' },
     { id: 3, src: '/assets/gallery-videos/gallery-3.mp4', alt: 'Coffee Reel 3' },
-    { id: 4, src: '/assets/gallery-videos/gallery-4.mp4', alt: 'Coffee Reel 4' },
-    { id: 5, src: '/assets/gallery-videos/gallery-5.mp4', alt: 'Coffee Reel 5' },
-    { id: 6, src: '/assets/gallery-videos/gallery-6.mp4', alt: 'Coffee Reel 6' },
 ];
 
 function VideoItem({ videoData, onOpenPopup }) {
     const videoRef = useRef(null);
     const wrapperRef = useRef(null);
-    const [isMuted, setIsMuted] = useState(true);
-    const [isPlaying, setIsPlaying] = useState(false);
     const [shouldLoad, setShouldLoad] = useState(false);
 
     useEffect(() => {
@@ -32,66 +27,27 @@ function VideoItem({ videoData, onOpenPopup }) {
         return () => observer.disconnect();
     }, [shouldLoad]);
 
-    const toggleMute = (e) => {
-        e.stopPropagation();
-        setIsMuted(!isMuted);
-    };
-
-    const handleMouseEnter = () => {
-        if (videoRef.current) {
-            videoRef.current.play().catch(err => console.log('Autoplay blocked:', err));
-            setIsPlaying(true);
-        }
-    };
-
-    const handleMouseLeave = () => {
-        if (videoRef.current) {
-            videoRef.current.pause();
-            setIsPlaying(false);
-        }
-    };
-
     return (
         <div
             ref={wrapperRef}
             className="gallery-item-wrapper"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
             onClick={(e) => onOpenPopup(videoData, e)}
         >
             <video
                 ref={videoRef}
-                src={shouldLoad ? videoData.src : undefined}
-                preload="none"
+                src={shouldLoad ? `${videoData.src}#t=0.001` : undefined}
+                preload="metadata"
                 className="gallery-item-video"
-                muted={isMuted}
-                loop
+                muted
                 playsInline
                 draggable="false"
             />
 
-            {!isPlaying && (
-                <div className="video-play-overlay">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M8 5v14l11-7z" />
-                    </svg>
-                </div>
-            )}
-
-            <button className="video-mute-toggle" onClick={toggleMute}>
-                {isMuted ? (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M11 5L6 9H2v6h4l5 4V5z" />
-                        <line x1="23" y1="9" x2="17" y2="15" />
-                        <line x1="17" y1="9" x2="23" y2="15" />
-                    </svg>
-                ) : (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M11 5L6 9H2v6h4l5 4V5z" />
-                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
-                    </svg>
-                )}
-            </button>
+            <div className="video-play-overlay">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+            </div>
         </div>
     );
 }

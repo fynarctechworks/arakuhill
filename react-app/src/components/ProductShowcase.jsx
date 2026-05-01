@@ -39,10 +39,9 @@ const ALL_PRODUCTS = [
         image: '/images/products/Araku Latte.webp',
         isHero: false,
         row: 1,
-        origin: 'Araku Valley Signature',
-        altitude: '1000–1200m',
-        process: 'Natural',
-        tastingNotes: 'Caramel, toasted nuts, creamy finish',
+        origin: 'Single Origin',
+        process: 'Medium Roast',
+        tastingNotes: 'Espresso, creamy finish',
         description:
             'Our signature latte combines our nuanced espresso with velvety steamed milk. It’s a smooth, creamy beverage that perfects the balance between robust coffee flavors and natural milk sweetness.',
     },
@@ -52,9 +51,8 @@ const ALL_PRODUCTS = [
         image: '/images/products/Americano.webp',
         isHero: false,
         row: 1,
-        origin: 'Araku Valley',
-        altitude: '900–1100m',
-        process: 'Washed',
+        origin: 'Single Origin',
+        process: 'Medium Roast',
         tastingNotes: 'Bold, clean, dark cocoa',
         description:
             'A classic, strong black coffee. Hot water is carefully poured over rich, bold espresso, showcasing the pure, unadulterated flavors of our premium Araku beans. Perfect for those who appreciate simplicity and strength.',
@@ -65,9 +63,8 @@ const ALL_PRODUCTS = [
         image: '/images/products/redwine Espresso.webp',
         isHero: true,
         row: 1,
-        origin: 'Araku Valley',
-        altitude: '1100–1300m',
-        process: 'Natural Fermented',
+        origin: 'Single Origin',
+        process: 'Medium Roast',
         tastingNotes: 'Winey notes, dark cherry, rich chocolate',
         description:
             'Our premium Red Wine Espresso is crafted from specially fermented beans, offering a sophisticated profile with deep winy notes and a luxurious chocolate finish. A truly unique experience.',
@@ -78,8 +75,7 @@ const ALL_PRODUCTS = [
         image: '/images/products/Macchiato.webp',
         isHero: false,
         row: 1,
-        origin: 'Araku Valley',
-        altitude: '1100–1300m',
+        origin: 'Single Origin',
         process: 'Medium Roast',
         tastingNotes: 'Intense, bold, touch of cream',
         description:
@@ -91,9 +87,8 @@ const ALL_PRODUCTS = [
         image: '/images/products/Caramel Frappe.webp',
         isHero: false,
         row: 1,
-        origin: 'Dessert Blend',
-        altitude: 'Multi-Origin',
-        process: 'Blended Cold',
+        origin: 'Single Origin',
+        process: 'Medium Roast',
         tastingNotes: 'Buttery caramel, vanilla, sweet cream',
         description:
             'A sweet indulgence. We blend our cold brew with rich caramel syrup, milk, and ice, topping it off with whipped cream and a decadent caramel drizzle. A perfect treat to beat the heat.',
@@ -105,9 +100,8 @@ const ALL_PRODUCTS = [
         image: '/images/products/Vietnamese Frappe.webp',
         isHero: false,
         row: 2,
-        origin: 'Multi-Origin',
-        altitude: 'N/A',
-        process: 'Blended Cold',
+        origin: 'Single Origin',
+        process: 'Medium Roast',
         tastingNotes: 'Intense coffee, sweet condensed milk, ice-cold',
         description:
             'Inspired by traditional Vietnamese coffee. We blend strong, dark-roasted coffee with rich, sweet condensed milk and ice to create a powerfully energizing and sweet frozen treat.',
@@ -118,9 +112,8 @@ const ALL_PRODUCTS = [
         image: '/images/products/Litchi Espresso.webp',
         isHero: false,
         row: 2,
-        origin: 'Araku Valley',
-        altitude: '1100–1300m',
-        process: 'Light Roast',
+        origin: 'Single Origin',
+        process: 'Medium Roast',
         tastingNotes: 'Floral, sweet litchi, bright espresso',
         description:
             'An exotic, floral delight. We pair the sweet, fragrant notes of fresh litchi with the bright acidity of our carefully pulled espresso. A uniquely refreshing cold beverage that dances on the palate.',
@@ -131,9 +124,8 @@ const ALL_PRODUCTS = [
         image: '/images/products/Iced coffee.webp',
         isHero: false,
         row: 2,
-        origin: 'Araku Valley',
-        altitude: '900–1100m',
-        process: 'Cold Infusion',
+        origin: 'Single Origin',
+        process: 'Medium Roast',
         tastingNotes: 'Smooth cocoa, crisp finish, refreshing',
         description:
             'Crisp, cold, and immensely refreshing. Our iced coffee is brewed slowly to extract maximum flavor without bitterness, then served pure and simple over cracked ice.',
@@ -144,8 +136,7 @@ const ALL_PRODUCTS = [
         image: '/images/products/Spanish Latte.webp',
         isHero: false,
         row: 2,
-        origin: 'Araku Valley',
-        altitude: '1000–1200m',
+        origin: 'Single Origin',
         process: 'Medium Roast',
         tastingNotes: 'Sweetened condensed milk, rich cocoa, creamy',
         description:
@@ -159,7 +150,6 @@ const ALL_PRODUCTS = [
         row: 2,
         isLink: true,
         origin: '',
-        altitude: '',
         process: '',
         tastingNotes: '',
         description: '',
@@ -178,7 +168,6 @@ export default function ProductShowcase() {
     // Hero text refs
     const titleRef = useRef(null)
     const letterRefs = useRef([])
-    const subtitleRef = useRef(null)
     const leftRef = useRef(null)
     const rightRef = useRef(null)
 
@@ -251,7 +240,7 @@ export default function ProductShowcase() {
 
             const heroCard = isMob ? mobileCardRefs.current[4] : row1Refs.current[HERO_INDEX]
             const heroWrap = isMob ? mobileWrapRefs.current[4] : imgWrapRefs.current[HERO_INDEX]
-            
+
             // Set initial states for hero elements
             if (heroCard) {
                 gsap.set(heroCard, { scale: 2.8, zIndex: 10, y: isMob ? '15vh' : '38vh', opacity: 1 })
@@ -303,7 +292,6 @@ export default function ProductShowcase() {
             gsap.set(letters, { opacity: 0, y: 60 })
 
             // Set initial states for other hero elements
-            gsap.set(subtitleRef.current, { opacity: 0, y: -15 })
             gsap.set(leftRef.current, { opacity: 0, x: -40 })
             gsap.set(rightRef.current, { opacity: 0, x: 40 })
 
@@ -316,12 +304,6 @@ export default function ProductShowcase() {
                 }
             })
 
-            // 1. "SPECIALTY SINGLE ORIGIN" subtitle fades in first
-            entranceTl.to(subtitleRef.current, {
-                opacity: 1, y: 0,
-                duration: 0.6,
-                ease: 'power2.out',
-            }, 0)
 
             // 2. RED WINE letters appear one by one (indices 0–7)
             entranceTl.to(letters.slice(0, 8), {
@@ -381,12 +363,11 @@ export default function ProductShowcase() {
                 frame: FRAME_COUNT - 1,
                 snap: 'frame',
                 ease: 'none',
-                duration: 0.7, 
+                duration: 0.7,
                 onUpdate: () => renderFrame(sequenceRef.current.frame),
             }, 0)
 
             // 2. Texts fade out near the end of the pour
-            mainTl.to(subtitleRef.current, { opacity: 0, y: -20, ease: 'power2.in', duration: 0.05 }, 0.65)
             mainTl.to(leftRef.current, { opacity: 0, x: -40, ease: 'power2.in', duration: 0.05 }, 0.65)
             mainTl.to(rightRef.current, { opacity: 0, x: 40, ease: 'power2.in', duration: 0.05 }, 0.65)
             if (titleRef.current) {
@@ -536,277 +517,268 @@ export default function ProductShowcase() {
 
     return (
         <section className="product-showcase" ref={stageRef}>
-            <img 
-                src="/assets/highlights/layer.png" 
-                alt="" 
-                className="section-layer" 
+            <img
+                src="/assets/highlights/layer.png"
+                alt=""
+                className="section-layer"
                 aria-hidden="true"
             />
 
             {/* ══ HERO TEXT ══════════════════════ */}
-                <span
-                    className="product-showcase__hero-subtitle"
-                    ref={subtitleRef}
-                >
-                    SPECIALTY SINGLE ORIGIN
-                </span>
 
-                <h2
-                    className="product-showcase__hero-title"
-                    ref={titleRef}
-                >
-                    {['R', 'E', 'D', ' ', 'W', 'I', 'N', 'E'].map((ch, i) => (
-                        <span
-                            key={`l1-${i}`}
-                            className={`product-showcase__letter${ch === ' ' ? ' product-showcase__letter--space' : ''}`}
-                            ref={(el) => { letterRefs.current[i] = el }}
-                        >
-                            {ch}
-                        </span>
-                    ))}
-                    <br />
-                    {['E', 'S', 'P', 'R', 'E', 'S', 'S', 'O'].map((ch, i) => (
-                        <span
-                            key={`l2-${i}`}
-                            className="product-showcase__letter"
-                            ref={(el) => { letterRefs.current[8 + i] = el }}
-                        >
-                            {ch}
-                        </span>
-                    ))}
-                </h2>
+            <h2
+                className="product-showcase__hero-title"
+                ref={titleRef}
+            >
+                {['R', 'E', 'D', ' ', 'W', 'I', 'N', 'E'].map((ch, i) => (
+                    <span
+                        key={`l1-${i}`}
+                        className={`product-showcase__letter${ch === ' ' ? ' product-showcase__letter--space' : ''}`}
+                        ref={(el) => { letterRefs.current[i] = el }}
+                    >
+                        {ch}
+                    </span>
+                ))}
+                <br />
+                {['E', 'S', 'P', 'R', 'E', 'S', 'S', 'O'].map((ch, i) => (
+                    <span
+                        key={`l2-${i}`}
+                        className="product-showcase__letter"
+                        ref={(el) => { letterRefs.current[8 + i] = el }}
+                    >
+                        {ch}
+                    </span>
+                ))}
+            </h2>
 
-                <div className="product-showcase__hero-left" ref={leftRef}>
-                    <p className="product-showcase__hero-tagline">Bold. Rich. Refined.</p>
-                    <p className="product-showcase__hero-headline">
-                        Sip the Essence<br />of Araku
-                    </p>
-                </div>
+            <div className="product-showcase__hero-left" ref={leftRef}>
+                <p className="product-showcase__hero-tagline">Bold. Rich. Refined.</p>
+                <p className="product-showcase__hero-headline">
+                    Sip the Essence<br />of Araku
+                </p>
+            </div>
 
-                <div className="product-showcase__hero-right" ref={rightRef}>
-                    <p className="product-showcase__hero-desc">
-                        Every cup is a blend of premium single-origin
-                        beans, artisan roasting, and timeless tradition
-                        — crafted to elevate your senses.
-                    </p>
-                    <span className="product-showcase__hero-cta">View collection</span>
-                </div>
+            <div className="product-showcase__hero-right" ref={rightRef}>
+                <p className="product-showcase__hero-desc">
+                    Every cup is a blend of premium single-origin
+                    beans, artisan roasting, and timeless tradition
+                    — crafted to elevate your senses.
+                </p>
+                <span className="product-showcase__hero-cta">View collection</span>
+            </div>
 
-                {/* ══ PRODUCT GRID ═══════════════════ */}
-                {!isMobile ? (
-                    <div className="product-showcase__grid">
-                        {/* Row 1 */}
-                        <div className="product-showcase__row">
-                            {ROW_1.map((product, i) => {
-                                const isHero = product.isHero
-                                const currentWrapIdx = wrapIdx++
-                                return (
-                                    <div
-                                        key={product.id}
-                                        className={`product-showcase__card ${isHero ? 'product-showcase__card--hero' : ''}`}
-                                        ref={(el) => { row1Refs.current[i] = el }}
-                                        onClick={() => openModal(product)}
-                                    >
-                                        <div
-                                            className="product-showcase__card-img-wrap"
-                                            ref={(el) => { imgWrapRefs.current[currentWrapIdx] = el }}
-                                        >
-                                            <img
-                                                className="product-showcase__card-img"
-                                                src={product.image}
-                                                alt={product.name}
-                                                draggable="false"
-                                                ref={isHero ? heroImgNodeRef : undefined}
-                                            />
-                                            {isHero && (
-                                                <canvas
-                                                    ref={canvasRef}
-                                                    className="product-showcase__animation-canvas"
-                                                />
-                                            )}
-                                        </div>
-                                        <h3
-                                            className="product-showcase__card-name"
-                                            ref={isHero ? heroLabelRef : undefined}
-                                        >
-                                            {product.name}
-                                        </h3>
-                                    </div>
-                                )
-                            })}
-                        </div>
-
-                        {/* Row 2 */}
-                        <div
-                            className="product-showcase__row product-showcase__row--second"
-                            ref={row2WrapRef}
-                        >
-                            {ROW_2.map((product) => {
-                                const currentWrapIdx = wrapIdx++
-                                return (
-                                    <div
-                                        key={product.id}
-                                        className={`product-showcase__card ${product.id === 'show-more' ? 'product-showcase__card--show-more' : ''}`}
-                                        onClick={() => {
-                                            if (!isGridClickableRef.current) return
-                                            if (product.id === 'show-more') {
-                                                navigate('/page/products')
-                                            } else {
-                                                openModal(product)
-                                            }
-                                        }}
-                                    >
-                                        <div
-                                            className="product-showcase__card-img-wrap"
-                                            ref={(el) => { imgWrapRefs.current[currentWrapIdx] = el }}
-                                        >
-                                            {product.id === 'show-more' ? (
-                                                <div className="product-showcase__card-more-overlay">
-                                                    <span>+10</span>
-                                                </div>
-                                            ) : null}
-                                            <img
-                                                className="product-showcase__card-img"
-                                                src={product.image}
-                                                alt={product.name}
-                                                draggable="false"
-                                                style={product.id === 'show-more' ? { filter: 'blur(4px) brightness(0.6)' } : {}}
-                                            />
-                                        </div>
-                                        <h3 className="product-showcase__card-name">
-                                            {product.name}
-                                        </h3>
-                                    </div>
-                                )
-                            })}
-                        </div>
-                    </div>
-                ) : (
-                    /* ══ MOBILE GRID — 3 per row, Cranberry at 5th ══ */
-                    <div className="product-showcase__grid product-showcase__grid--mobile" ref={mobileGridRef}>
-                        <div className="product-showcase__mobile-grid">
-                            {MOBILE_PRODUCTS.map((product) => (
+            {/* ══ PRODUCT GRID ═══════════════════ */}
+            {!isMobile ? (
+                <div className="product-showcase__grid">
+                    {/* Row 1 */}
+                    <div className="product-showcase__row">
+                        {ROW_1.map((product, i) => {
+                            const isHero = product.isHero
+                            const currentWrapIdx = wrapIdx++
+                            return (
                                 <div
                                     key={product.id}
-                                    className={`product-showcase__card ${product.isHero ? 'product-showcase__card--hero' : ''}`}
+                                    className={`product-showcase__card ${isHero ? 'product-showcase__card--hero' : ''}`}
+                                    ref={(el) => { row1Refs.current[i] = el }}
                                     onClick={() => openModal(product)}
-                                    ref={(el) => { mobileCardRefs.current[MOBILE_PRODUCTS.indexOf(product)] = el }}
                                 >
                                     <div
                                         className="product-showcase__card-img-wrap"
-                                        ref={(el) => { mobileWrapRefs.current[MOBILE_PRODUCTS.indexOf(product)] = el }}
+                                        ref={(el) => { imgWrapRefs.current[currentWrapIdx] = el }}
                                     >
                                         <img
                                             className="product-showcase__card-img"
                                             src={product.image}
                                             alt={product.name}
                                             draggable="false"
-                                            ref={product.isHero ? heroImgNodeRef : undefined}
+                                            ref={isHero ? heroImgNodeRef : undefined}
                                         />
-                                        {product.isHero && (
+                                        {isHero && (
                                             <canvas
                                                 ref={canvasRef}
                                                 className="product-showcase__animation-canvas"
                                             />
                                         )}
                                     </div>
-                                    <h3 
+                                    <h3
                                         className="product-showcase__card-name"
-                                        ref={product.isHero ? heroLabelRef : undefined}
+                                        ref={isHero ? heroLabelRef : undefined}
                                     >
                                         {product.name}
                                     </h3>
                                 </div>
-                            ))}
-                        </div>
+                            )
+                        })}
+                    </div>
+
+                    {/* Row 2 */}
+                    <div
+                        className="product-showcase__row product-showcase__row--second"
+                        ref={row2WrapRef}
+                    >
+                        {ROW_2.map((product) => {
+                            const currentWrapIdx = wrapIdx++
+                            return (
+                                <div
+                                    key={product.id}
+                                    className={`product-showcase__card ${product.id === 'show-more' ? 'product-showcase__card--show-more' : ''}`}
+                                    onClick={() => {
+                                        if (!isGridClickableRef.current) return
+                                        if (product.id === 'show-more') {
+                                            navigate('/page/products')
+                                        } else {
+                                            openModal(product)
+                                        }
+                                    }}
+                                >
+                                    <div
+                                        className="product-showcase__card-img-wrap"
+                                        ref={(el) => { imgWrapRefs.current[currentWrapIdx] = el }}
+                                    >
+                                        {product.id === 'show-more' ? (
+                                            <div className="product-showcase__card-more-overlay">
+                                                <span>+10</span>
+                                            </div>
+                                        ) : null}
+                                        <img
+                                            className="product-showcase__card-img"
+                                            src={product.image}
+                                            alt={product.name}
+                                            draggable="false"
+                                            style={product.id === 'show-more' ? { filter: 'blur(4px) brightness(0.6)' } : {}}
+                                        />
+                                    </div>
+                                    <h3 className="product-showcase__card-name">
+                                        {product.name}
+                                    </h3>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
+            ) : (
+                /* ══ MOBILE GRID — 3 per row, Cranberry at 5th ══ */
+                <div className="product-showcase__grid product-showcase__grid--mobile" ref={mobileGridRef}>
+                    <div className="product-showcase__mobile-grid">
+                        {MOBILE_PRODUCTS.map((product) => (
+                            <div
+                                key={product.id}
+                                className={`product-showcase__card ${product.isHero ? 'product-showcase__card--hero' : ''}`}
+                                onClick={() => openModal(product)}
+                                ref={(el) => { mobileCardRefs.current[MOBILE_PRODUCTS.indexOf(product)] = el }}
+                            >
+                                <div
+                                    className="product-showcase__card-img-wrap"
+                                    ref={(el) => { mobileWrapRefs.current[MOBILE_PRODUCTS.indexOf(product)] = el }}
+                                >
+                                    <img
+                                        className="product-showcase__card-img"
+                                        src={product.image}
+                                        alt={product.name}
+                                        draggable="false"
+                                        ref={product.isHero ? heroImgNodeRef : undefined}
+                                    />
+                                    {product.isHero && (
+                                        <canvas
+                                            ref={canvasRef}
+                                            className="product-showcase__animation-canvas"
+                                        />
+                                    )}
+                                </div>
+                                <h3
+                                    className="product-showcase__card-name"
+                                    ref={product.isHero ? heroLabelRef : undefined}
+                                >
+                                    {product.name}
+                                </h3>
+                            </div>
+                        ))}
+                    </div>
+                    <button
+                        className="product-showcase__see-more-btn"
+                        ref={seeMoreBtnRef}
+                        onClick={() => isGridClickableRef.current && navigate('/page/products')}
+                    >
+                        See More
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </button>
+                </div>
+            )}
+
+            {/* ══ PRODUCT DETAIL MODAL ══════════ */}
+            {selectedProduct && (
+                <div
+                    className="product-modal"
+                    ref={modalRef}
+                    onClick={(e) => { if (e.target === e.currentTarget) closeModal() }}
+                >
+                    <div className="product-modal__content" ref={modalContentRef}>
+
+                        {/* Close button */}
                         <button
-                            className="product-showcase__see-more-btn"
-                            ref={seeMoreBtnRef}
-                            onClick={() => isGridClickableRef.current && navigate('/page/products')}
+                            className="product-modal__close"
+                            onClick={closeModal}
+                            aria-label="Close"
                         >
-                            See More
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                                <polyline points="12 5 19 12 12 19" />
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" strokeWidth="1.5" />
+                                <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" strokeWidth="1.5" />
                             </svg>
                         </button>
-                    </div>
-                )}
 
-                {/* ══ PRODUCT DETAIL MODAL ══════════ */}
-                {selectedProduct && (
-                    <div
-                        className="product-modal"
-                        ref={modalRef}
-                        onClick={(e) => { if (e.target === e.currentTarget) closeModal() }}
-                    >
-                        <div className="product-modal__content" ref={modalContentRef}>
+                        {/* Image side */}
+                        <div className="product-modal__image-side">
+                            <img
+                                className="product-modal__image"
+                                src={selectedProduct.image}
+                                alt={selectedProduct.name}
+                                draggable="false"
+                            />
+                        </div>
 
-                            {/* Close button */}
-                            <button
-                                className="product-modal__close"
-                                onClick={closeModal}
-                                aria-label="Close"
-                            >
-                                <svg viewBox="0 0 24 24" width="24" height="24">
-                                    <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" strokeWidth="1.5" />
-                                    <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" strokeWidth="1.5" />
-                                </svg>
-                            </button>
+                        {/* Info side */}
+                        <div className="product-modal__info-side">
+                            <span className="product-modal__origin-label">
+                                SINGLE ORIGIN
+                            </span>
 
-                            {/* Image side */}
-                            <div className="product-modal__image-side">
-                                <img
-                                    className="product-modal__image"
-                                    src={selectedProduct.image}
-                                    alt={selectedProduct.name}
-                                    draggable="false"
-                                />
-                            </div>
+                            <h3 className="product-modal__name">
+                                {selectedProduct.name}
+                            </h3>
 
-                            {/* Info side */}
-                            <div className="product-modal__info-side">
-                                <span className="product-modal__origin-label">
-                                    SINGLE ORIGIN
-                                </span>
+                            <p className="product-modal__description">
+                                {selectedProduct.description}
+                            </p>
 
-                                <h3 className="product-modal__name">
-                                    {selectedProduct.name}
-                                </h3>
-
-                                <p className="product-modal__description">
-                                    {selectedProduct.description}
-                                </p>
-
-                                {/* Details grid */}
-                                <div className="product-modal__details">
-                                    <div className="product-modal__detail">
-                                        <span className="product-modal__detail-label">Origin</span>
-                                        <span className="product-modal__detail-value">{selectedProduct.origin}</span>
-                                    </div>
-                                    <div className="product-modal__detail">
-                                        <span className="product-modal__detail-label">Altitude</span>
-                                        <span className="product-modal__detail-value">{selectedProduct.altitude}</span>
-                                    </div>
-                                    <div className="product-modal__detail">
-                                        <span className="product-modal__detail-label">Process</span>
-                                        <span className="product-modal__detail-value">{selectedProduct.process}</span>
-                                    </div>
-                                    <div className="product-modal__detail">
-                                        <span className="product-modal__detail-label">Tasting Notes</span>
-                                        <span className="product-modal__detail-value">{selectedProduct.tastingNotes}</span>
-                                    </div>
+                            {/* Details grid */}
+                            <div className="product-modal__details">
+                                <div className="product-modal__detail">
+                                    <span className="product-modal__detail-label">Origin</span>
+                                    <span className="product-modal__detail-value">{selectedProduct.origin}</span>
                                 </div>
 
-                                {/* CTA */}
-                                <button className="product-modal__cta">
-                                    Explore This Coffee
-                                </button>
+                                <div className="product-modal__detail">
+                                    <span className="product-modal__detail-label">Process</span>
+                                    <span className="product-modal__detail-value">{selectedProduct.process}</span>
+                                </div>
+                                <div className="product-modal__detail">
+                                    <span className="product-modal__detail-label">Tasting Notes</span>
+                                    <span className="product-modal__detail-value">{selectedProduct.tastingNotes}</span>
+                                </div>
                             </div>
 
+                            {/* CTA */}
+                            {/* <button className="product-modal__cta">
+                                    Explore This Coffee
+                                </button> */}
                         </div>
+
                     </div>
-                )}
+                </div>
+            )}
 
         </section>
     )

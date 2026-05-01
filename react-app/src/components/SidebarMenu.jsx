@@ -91,12 +91,12 @@ export default function SidebarMenu({ isOpen, onClose, linksOverride }) {
 
                 {/* Footer */}
                 <div className="sidebar__footer">
-                    <img 
-                        src="/assets/Araku-hill-coffee-logo.svg" 
-                        alt="Araku Hill Coffee Logo" 
-                        className="sidebar__footer-logo" 
+                    <img
+                        src="/assets/Araku-hill-coffee-logo.svg"
+                        alt="Araku Hill Coffee Logo"
+                        className="sidebar__footer-logo"
                     />
-                    <span className="sidebar__footer-sub">From the valley, for the world.</span>
+                    <span className="sidebar__footer-sub">Drink Different</span>
                 </div>
             </nav>
         </>

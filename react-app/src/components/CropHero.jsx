@@ -53,7 +53,7 @@ export default function CropHero({ onMenuClick }) {
                 <div className="crop-nav-left" onClick={onMenuClick} style={{ cursor: 'pointer' }}>
                     MENU
                 </div>
-                <div className="crop-nav-center" style={{ width: '120px', height: '48px' }}>
+                <div className="crop-nav-center" style={{ width: '120px', height: '48px', cursor: 'pointer' }} onClick={() => navigate('/')}>
                     <img src="/assets/Araku-hill-coffee-logo.svg" alt="Araku Hill Coffee" className="crop-logo" />
                 </div>
                 <div className="crop-nav-right" onClick={() => navigate('/page/contact-us')} style={{ cursor: 'pointer' }}>

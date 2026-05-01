@@ -83,20 +83,6 @@
     width: 0.3em;
 }
 
-.product-showcase__hero-subtitle {
-    position: absolute;
-    top: clamp(30px, 5vh, 60px);
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'Outfit', sans-serif;
-    font-size: clamp(10px, 1vw, 13px);
-    font-weight: 300;
-    color: rgba(46, 46, 46, 0.45);
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    z-index: 5;
-    will-change: transform, opacity;
-}
 
 /* Left side text */
 .product-showcase__hero-left {
