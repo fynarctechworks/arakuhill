@@ -40,10 +40,10 @@ const FOOTER_LINKS = {
         { label: 'Newsletter', to: '/page/newsletter' },
     ],
     'Locations': [
-        { label: 'Vizag Branch', href: 'https://www.google.com/maps/place/Araku+Hill+Coffee/@17.7816033,83.381651,12.5z/data=!4m6!3m5!1s0x3a395b007aeae02b:0x87d596c54654a6ba!8m2!3d17.7816033!4d83.381651!16s%2Fg%2F11xm24f_sr?entry=ttu&g_ep=EgoyMDI2MDMyOS4wIKXMDSoASAFQAw%3D%3D', external: true },
+        { label: 'Rushikonda', href: 'https://www.google.com/maps/place/Araku+Hill+Coffee/@17.7816033,83.381651,12.5z/data=!4m6!3m5!1s0x3a395b007aeae02b:0x87d596c54654a6ba!8m2!3d17.7816033!4d83.381651!16s%2Fg%2F11xm24f_sr?entry=ttu&g_ep=EgoyMDI2MDMyOS4wIKXMDSoASAFQAw%3D%3D', external: true },
         { label: 'VIP Road Vizag', href: 'https://maps.app.goo.gl/cMXr1DzArapQXgR59?g_st=ic', external: true },
         { label: 'Tennati Park Vizag', href: 'https://maps.app.goo.gl/d7aH49AF8XPhrSK79?g_st=ic', external: true },
-        { label: 'Hyderabad Branch', href: 'https://maps.app.goo.gl/pcRFYdLs6fVgmAf39', external: true },
+        { label: 'Jubilee hills', href: 'https://maps.app.goo.gl/pcRFYdLs6fVgmAf39', external: true },
     ],
 }
 

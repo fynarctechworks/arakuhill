@@ -18,7 +18,7 @@ export default function ContactPage() {
         const whatsappText = `*New Inquiry via Website*\n\n*Name:* ${name}\n*Email:* ${email}\n*Subject:* ${subject}\n\n*Message:*\n${message}`
         const encodedText = encodeURIComponent(whatsappText)
         
-        const phoneNumber = "919963940369"
+        const phoneNumber = "917675886669"
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`
         
         window.open(whatsappUrl, '_blank')
@@ -72,7 +72,7 @@ export default function ContactPage() {
                             </div>
                             <div className="contact-detail-item">
                                 <h3>Phone</h3>
-                                <p>+91 99639 40369</p>
+                                <p>+91 7675886669</p>
                             </div>
                             <div className="contact-detail-item">
                                 <h3>Hours</h3>
@@ -84,7 +84,7 @@ export default function ContactPage() {
                             <h3>Our Branches</h3>
                             <div className="branch-grid">
                                 <div className="branch-item">
-                                    <h4 className="branch-name">Vizag Branch</h4>
+                                    <h4 className="branch-name">Rushikonda</h4>
                                     <a 
                                         href="https://www.google.com/maps/place/Araku+Hill+Coffee/@17.7816033,83.381651,12.5z/data=!4m6!3m5!1s0x3a395b007aeae02b:0x87d596c54654a6ba!8m2!3d17.7816033!4d83.381651!16s%2Fg%2F11xm24f_sr?entry=ttu&g_ep=EgoyMDI2MDMyOS4wIKXMDSoASAFQAw%3D%3D" 
                                         target="_blank" 
@@ -126,7 +126,7 @@ export default function ContactPage() {
                                     </a>
                                 </div>
                                 <div className="branch-item">
-                                    <h4 className="branch-name">Hyderabad Branch</h4>
+                                    <h4 className="branch-name">Jubilee hills</h4>
                                     <a 
                                         href="https://maps.app.goo.gl/pcRFYdLs6fVgmAf39" 
                                         target="_blank" 
