@@ -9,6 +9,7 @@ import ContactPage from './pages/ContactPage'
 import ProductsPage from './pages/ProductsPage'
 import NotFound from './pages/NotFound'
 import ScrollManager from './components/ScrollManager'
+import { Analytics } from '@vercel/analytics/react'
 
 // Register ScrollTrigger ONCE at module level
 gsap.registerPlugin(ScrollTrigger)
@@ -16,6 +17,7 @@ gsap.registerPlugin(ScrollTrigger)
 export default function App() {
     return (
         <BrowserRouter>
+            <Analytics />
             <ScrollManager />
             <Routes>
                 <Route path="/" element={<HomePage />} />
